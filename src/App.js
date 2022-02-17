@@ -12,18 +12,25 @@ import GoalPage from './components/pages/loggedin/GoalPage';
 import ManagePage from './components/pages/loggedin/ManagePage';
 
 import { UserContext } from './components/UserContext';
+import { TaskContext } from './components/TaskContext';
 
 import './App.css';
 
 function App() {
 
   const [user, setUser] = useState(null);
+  const [task, setTask] = useState(null);
 
   const providerValue = useMemo( ()=> ({user, setUser}), [user, setUser]);
+  const pValue = useMemo( ()=> ({task, setTask}), [task, setTask]);
+  
   return (
     <div>
-    
+      
       <UserContext.Provider value = { providerValue}>
+        <TaskContext.Provider value = {pValue}>
+
+        
         <Routes>
         
           <Route path='/' element={<LandingPage/>}/>
@@ -43,6 +50,7 @@ function App() {
           <Route path='/manage' element={<ManagePage/>}/>
           
           </Routes>
+          </TaskContext.Provider>
         </UserContext.Provider>
  
 

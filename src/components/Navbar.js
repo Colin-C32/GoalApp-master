@@ -1,6 +1,7 @@
 import React, {useState , useContext} from 'react';
 import { useNavigate} from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+
 import './Navbar.scss';
 import logo from './images/logo.svg';
 

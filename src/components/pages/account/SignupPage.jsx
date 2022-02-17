@@ -62,6 +62,9 @@ function SignupPage(){
             return; 
         }
 
+        console.log(emailRef.current.value);
+        console.log(passwordRef.current.value);
+
       
     }
 
@@ -75,7 +78,7 @@ function SignupPage(){
             <h1 className="head">Create LifeXP account!</h1>
             
             <form className = "form" onSubmit = {submitHandler}>
-            <div className="control">
+                <div className="control">
                     <label className="label" htmlFor="email">Enter an email address:</label>
                     <input type='text' id='email' placeholder= 'e.g johnysins@gmail.com' oninvalid="" ref={emailRef} />
                     {emailError && <p className="error"> You need to enter an email.</p>}

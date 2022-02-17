@@ -26,7 +26,7 @@ export const login = async () =>{
                 taskId: "4",
                 taskTitle: "Finish CPSC 471 Database",
                 taskDescription: "Connect database to website",
-                taskStatus: "In Progress",
+                taskStatus: "Completed",
             }
         ],
     };

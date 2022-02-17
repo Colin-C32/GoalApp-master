@@ -4,12 +4,14 @@ import { Link, useNavigate} from 'react-router-dom';
 import logo from '../../images/logo.svg';
 import { login } from '../../TrialUser';
 import { UserContext }  from '../../UserContext';
+import { TaskContext }  from '../../TaskContext';
 
 import './LoginPage.scss';
 
 function LoginPage(){
 
     const {user,  setUser} = useContext(UserContext);
+    const {task,  setTask} = useContext(TaskContext);
 
     let navigate = useNavigate();
 
@@ -58,8 +60,11 @@ function LoginPage(){
 
             //query data base and if user is exists log in if password and email matches
             //set user to the user found in database
+            console.log(emailRef.current.value);
+            console.log(passwordRef.current.value);
             const user = await login();
             setUser(user);
+            setTask(user['tasks']);
             navigate('/profile');
             
         }catch(err){
